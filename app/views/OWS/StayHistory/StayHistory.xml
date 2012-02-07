@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<soap:Header>
+		<OGHeader transactionID="000042" timeStamp="2004-01-13T15:48:22.9937500-05:00" xmlns="http://webservices.micros.com/og/4.3/Core/">
+			<Origin entityID="WEB" systemType="WEB"/>
+			<Destination entityID="WEB" systemType="ORS"/>
+		</OGHeader>
+	</soap:Header>
+	<soap:Body>
+		<StayHistoryRequest xmlns:hc="http://webservices.micros.com/og/4.3/HotelCommon/" xmlns="http://webservices.micros.com/ows/5.1/StayHistory.wsdl">
+			<NameID type="INTERNAL">1701077</NameID>
+			<QueryDateRange>
+				<hc:StartDate xmlns="http://webservices.micros.com/og/4.3/HotelCommon/">2007-01-01</hc:StartDate>
+				<hc:EndDate xmlns="http://webservices.micros.com/og/4.3/HotelCommon/">2007-12-31</hc:EndDate>
+			</QueryDateRange>
+		</StayHistoryRequest>
+	</soap:Body>
+</soap:Envelope>

@@ -1,0 +1,16 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://webservices.micros.com/og/4.3/Core/" xmlns:inf="http://webservices.micros.com/ows/5.1/Information.wsdl">
+   <soapenv:Header>
+      <core:OGHeader primaryLangID="E" timeStamp="{timeStamp}" xmlns="http://webservices.micros.com/og/4.3/Core/">
+         <core:Origin entityID="{hotelCode}" systemType="WEB"/>
+         <core:Destination entityID="{hotelCode}" systemType="PMS"/>
+      </core:OGHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <LovRequest xmlns="http://webservices.micros.com/ows/5.1/Information.wsdl">
+			<LovQuery2>
+				<LovIdentifier>{LovIdentifier}</LovIdentifier>
+				<LovQueryQualifier qualifierType=""></LovQueryQualifier>
+			</LovQuery2>
+		</LovRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

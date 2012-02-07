@@ -1,0 +1,70 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://webservices.micros.com/og/4.3/Common/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:r="http://webservices.micros.com/og/4.3/Reservation/" xmlns:hc="http://webservices.micros.com/og/4.3/HotelCommon/" xmlns:n="http://webservices.micros.com/og/4.3/Name/">
+	<soap:Header>
+		<OGHeader transactionID="{transactionID}" primaryLangID="E" timeStamp="{timeStamp}" xmlns="http://webservices.micros.com/og/4.3/Core/">
+        	<Origin entityID="{hotelCode}" systemType="WEB"/>
+         	<Destination entityID="{hotelCode}" systemType="PMS"/>
+      	</OGHeader>
+	</soap:Header>
+	<soap:Body>
+		<CreateBookingRequest xmlns="http://webservices.micros.com/ows/5.1/Reservation.wsdl">
+			<HotelReservation>
+				<r:RoomStays>
+					<hc:RoomStay>
+						<hc:RatePlans>
+							<hc:RatePlan ratePlanCode="{ratePlanCode}" qualifyingIdValue="{qualifyingIdValue}" qualifyingIdType="{qualifyingIdType}" />
+						</hc:RatePlans>
+						<hc:RoomTypes>
+							<hc:RoomType roomTypeCode="{roomTypeCode}" numberOfUnits="{numberOfUnits}" invBlockCode="{invBlockCode}" />
+						</hc:RoomTypes>
+						<hc:RoomRates>
+							<hc:RoomRate roomTypeCode="{roomTypeCode}" ratePlanCode="{ratePlanCode}"/>
+						</hc:RoomRates>
+						<hc:GuestCounts>
+							<hc:GuestCount ageQualifyingCode="ADULT" count="{adults}"/>
+							<hc:GuestCount ageQualifyingCode="CHILD" count="{children}"/>
+						</hc:GuestCounts>
+						<hc:TimeSpan>
+							<hc:StartDate>{StartDate}</hc:StartDate>
+							<hc:EndDate>{EndDate}</hc:EndDate>
+						</hc:TimeSpan>
+						<hc:Guarantee guaranteeType="CC">
+							<hc:GuaranteesAccepted>
+								<hc:GuaranteeAccepted>
+									<hc:GuaranteeCreditCard>
+										<c:cardCode>{cardCode}</c:cardCode>
+										<c:cardHolderName>{cardHolderName}</c:cardHolderName>
+										<c:cardNumber>{cardNumber}</c:cardNumber>
+										<c:expirationDate>{expirationDate}</c:expirationDate>
+									</hc:GuaranteeCreditCard>
+								</hc:GuaranteeAccepted>
+							</hc:GuaranteesAccepted>
+						</hc:Guarantee>
+						<hc:HotelReference chainCode="{chainCode}" hotelCode="{hotelCode}"/>
+						<hc:ResGuestRPHs>
+							<ResGuestRPH RPH="0"/>
+						</hc:ResGuestRPHs>
+						<hc:Comments>
+							<hc:Comment guestViewable="true">
+								<hc:Text>{Comments}</hc:Text>
+							</hc:Comment>
+						</hc:Comments>
+					</hc:RoomStay>
+				</r:RoomStays>
+				<r:ResGuests>
+					<r:ResGuest>
+						<r:Profiles>
+							<n:Profile>
+								<n:ProfileIDs>
+									<c:UniqueID type="INTERNAL">{UniqueID}</c:UniqueID>
+								</n:ProfileIDs>
+							</n:Profile>
+						</r:Profiles>
+					</r:ResGuest>
+				</r:ResGuests>
+				<WrittenConfInst>
+					<Email>{Email}</Email>
+				</WrittenConfInst>
+			</HotelReservation>
+		</CreateBookingRequest>
+	</soap:Body>
+</soap:Envelope>

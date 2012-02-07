@@ -1,0 +1,51 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://webservices.micros.com/og/4.3/Core/" xmlns:res="http://webservices.micros.com/ows/5.1/Reservation.wsdl" xmlns:res1="http://webservices.micros.com/og/4.3/Reservation/">
+   <soapenv:Header>
+      <core:OGHeader transactionID="?" authToken="?" timeStamp="?" primaryLangID="E">
+         <core:Origin entityID="?" organizationID="?" systemType="?"/>
+         <core:Destination entityID="?" organizationID="?" systemType="?"/>
+         <!--Optional:-->
+         <core:Intermediaries>
+            <!--1 or more repetitions:-->
+            <core:EndPoint entityID="?" organizationID="?" systemType="?"/>
+         </core:Intermediaries>
+         <!--Optional:-->
+         <core:Authentication>
+            <core:UserCredentials>
+               <core:UserName>?</core:UserName>
+               <core:UserPassword>?</core:UserPassword>
+               <core:Domain>?</core:Domain>
+               <!--Optional:-->
+               <core:SecurityId>?</core:SecurityId>
+            </core:UserCredentials>
+            <!--Optional:-->
+            <core:Licence>
+               <!--Optional:-->
+               <core:Key>?</core:Key>
+            </core:Licence>
+         </core:Authentication>
+      </core:OGHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <res:UpgradeReservationRequest>
+         <res:HotelReference chainCode="?" hotelCode="?">?</res:HotelReference>
+         <!--Optional:-->
+         <res:ConfirmationNumber type="?" source="?">?</res:ConfirmationNumber>
+         <!--Optional:-->
+         <res:LegNumber type="?" source="?">?</res:LegNumber>
+         <!--Optional:-->
+         <res:ResvNameId type="?" source="?">?</res:ResvNameId>
+         <!--Optional:-->
+         <res:MembershipID type="?" source="?">?</res:MembershipID>
+         <res:UpgradeRoom>
+            <res1:awardType>?</res1:awardType>
+            <!--Optional:-->
+            <res1:fromRoomCategory>?</res1:fromRoomCategory>
+            <res1:toRoomCategory>?</res1:toRoomCategory>
+            <!--Optional:-->
+            <res1:pointsRequired>?</res1:pointsRequired>
+            <!--Optional:-->
+            <res1:pointsAvailable>?</res1:pointsAvailable>
+         </res:UpgradeRoom>
+      </res:UpgradeReservationRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

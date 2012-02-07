@@ -1,0 +1,1437 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://webservices.micros.com/og/4.3/Core/" xmlns:res="http://webservices.micros.com/ows/5.1/Reservation.wsdl" xmlns:res1="http://webservices.micros.com/og/4.3/Reservation/" xmlns:com="http://webservices.micros.com/og/4.3/Common/" xmlns:hot="http://webservices.micros.com/og/4.3/HotelCommon/" xmlns:name="http://webservices.micros.com/og/4.3/Name/" xmlns:mem="http://webservices.micros.com/og/4.3/Membership/">
+   <soapenv:Header>
+      <core:OGHeader transactionID="?" authToken="?" timeStamp="?" primaryLangID="E">
+         <core:Origin entityID="?" organizationID="?" systemType="?"/>
+         <core:Destination entityID="?" organizationID="?" systemType="?"/>
+         <!--Optional:-->
+         <core:Intermediaries>
+            <!--1 or more repetitions:-->
+            <core:EndPoint entityID="?" organizationID="?" systemType="?"/>
+         </core:Intermediaries>
+         <!--Optional:-->
+         <core:Authentication>
+            <core:UserCredentials>
+               <core:UserName>?</core:UserName>
+               <core:UserPassword>?</core:UserPassword>
+               <core:Domain>?</core:Domain>
+               <!--Optional:-->
+               <core:SecurityId>?</core:SecurityId>
+            </core:UserCredentials>
+            <!--Optional:-->
+            <core:Licence>
+               <!--Optional:-->
+               <core:Key>?</core:Key>
+            </core:Licence>
+         </core:Authentication>
+      </core:OGHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <res:ModifyBookingRequest overrideInventoryCheck="?" cancelUpsell="?">
+         <res:HotelReservation reservationAction="?" reservationStatus="?" marketSegment="?" sourceCode="?" originCode="?" authorizer="?" compRoutingFlag="?" compRoutingAuthorizer="?" onBehalfFlag="?" redemReservationFlag="?" insertUser="?" insertDate="?" updateUser="?" updateDate="?" inactiveDate="?" walkIn="?" noPost="?" remoteCo="?" group="?" attachPreferenceProfile="?" keyExpirationDate="?" totalCreditCardSurcharges="?" DoNotMoveRoom="?" OptIn="?" OptInComplete="?">
+            <!--Optional:-->
+            <res1:UniqueIDList>
+               <!--Zero or more repetitions:-->
+               <com:UniqueID type="?" source="?">?</com:UniqueID>
+            </res1:UniqueIDList>
+            <!--Optional:-->
+            <res1:RoomStays>
+               <!--1 or more repetitions:-->
+               <hot:RoomStay isAlternate="?">
+                  <!--Optional:-->
+                  <hot:RatePlans>
+                     <!--1 or more repetitions:-->
+                     <hot:RatePlan ratePlanCategory="?" ratePlanCode="?" promotionCode="?" qualifyingIdType="?" qualifyingIdValue="?" effectiveDate="?" expirationDate="?" hold="?" commissionYn="?" mandatoryDeposit="?" suppressRate="?" ratePlanName="?" awardType="?" redemRate="?" commissionCode="?" asbRateCycle="?" hasPackage="?">
+                        <!--Optional:-->
+                        <hot:RatePlanDescription>
+                           <!--You have a CHOICE of the next 3 items at this level-->
+                           
+                           
+                           <hot:URL>?</hot:URL>
+                        </hot:RatePlanDescription>
+                        <!--Optional:-->
+                        <hot:RatePlanShortDescription>
+                           <!--You have a CHOICE of the next 3 items at this level-->
+                           
+                           
+                           <hot:URL>?</hot:URL>
+                        </hot:RatePlanShortDescription>
+                        <!--Optional:-->
+                        <hot:Commission percent="?" currencyCode="?">
+                           <!--Optional:-->
+                           <hot:CommissionPayableAmount currencyCode="?" decimals="?" currencyText="?">?</hot:CommissionPayableAmount>
+                           <!--Optional:-->
+                           <hot:Comment>
+                              <!--You have a CHOICE of the next 3 items at this level-->
+                              
+                              
+                              <hot:URL>?</hot:URL>
+                           </hot:Comment>
+                        </hot:Commission>
+                        <!--Optional:-->
+                        <hot:AdditionalDetails>
+                           <!--1 or more repetitions:-->
+                           <hot:AdditionalDetail detailType="?" otherDetailType="?">
+                              <!--Optional:-->
+                              <hot:AdditionalDetailDescription>
+                                 <!--You have a CHOICE of the next 3 items at this level-->
+                                 
+                                 
+                                 <hot:URL>?</hot:URL>
+                              </hot:AdditionalDetailDescription>
+                           </hot:AdditionalDetail>
+                        </hot:AdditionalDetails>
+                        <!--Optional:-->
+                        <hot:CancellationDateTime period="?">?</hot:CancellationDateTime>
+                        <!--Optional:-->
+                        <hot:DepositRequired>
+                           <!--You may enter the following 3 items in any order-->
+                           <hot:DepositAmount currencyCode="?" decimals="?" currencyText="?">?</hot:DepositAmount>
+                           <!--Optional:-->
+                           <hot:DueDate>?</hot:DueDate>
+                           <!--Optional:-->
+                           <hot:DepositDueAmount currencyCode="?" decimals="?" currencyText="?">?</hot:DepositDueAmount>
+                        </hot:DepositRequired>
+                        <!--Optional:-->
+                        <hot:GdsFlags>
+                           <!--Optional:-->
+                           <hot:LateArrivalTime>?</hot:LateArrivalTime>
+                           <!--Optional:-->
+                           <hot:CancellationCode>?</hot:CancellationCode>
+                           <!--Optional:-->
+                           <hot:GuarCancelFlag>?</hot:GuarCancelFlag>
+                        </hot:GdsFlags>
+                        <!--Optional:-->
+                        <hot:GuaranteeDetails>
+                           <!--1 or more repetitions:-->
+                           <hot:Guarantee guaranteeType="?" mandatoryDeposit="?" cancellationRequired="?" creditCardRequired="?" paymentType="?" requirementCode="?">
+                              <!--Optional:-->
+                              <hot:GuaranteesAccepted>
+                                 <!--1 or more repetitions:-->
+                                 <hot:GuaranteeAccepted agentPhone="?">
+                                    <!--Optional:-->
+                                    <hot:GuaranteeCreditCard cardType="?" otherCardType="?" chipAndPin="?">
+                                       <!--Optional:-->
+                                       <com:cardCode>?</com:cardCode>
+                                       <!--Optional:-->
+                                       <com:cardHolderName>?</com:cardHolderName>
+                                       <com:cardNumber>?</com:cardNumber>
+                                       <!--Optional:-->
+                                       <com:seriesCode>?</com:seriesCode>
+                                       <!--Optional:-->
+                                       <com:Track2>?</com:Track2>
+                                       <!--Optional:-->
+                                       <com:effectiveDate>?</com:effectiveDate>
+                                       <com:expirationDate>?</com:expirationDate>
+                                       <!--Optional:-->
+                                       <com:EncryptedSwipe>
+                                          <com:TrackIndicator>?</com:TrackIndicator>
+                                          <com:SwiperType>?</com:SwiperType>
+                                          <!--Optional:-->
+                                          <com:SwiperID>?</com:SwiperID>
+                                          <com:MaskedPAN>?</com:MaskedPAN>
+                                          <!--Optional:-->
+                                          <com:Track1>?</com:Track1>
+                                          <!--Optional:-->
+                                          <com:Track2>?</com:Track2>
+                                          <com:KeySerialNumber>?</com:KeySerialNumber>
+                                       </com:EncryptedSwipe>
+                                    </hot:GuaranteeCreditCard>
+                                    <!--Optional:-->
+                                    <hot:GuaranteeTravelAgent type="?" source="?">?</hot:GuaranteeTravelAgent>
+                                    <!--Optional:-->
+                                    <hot:GuaranteeCompany type="?" source="?">?</hot:GuaranteeCompany>
+                                 </hot:GuaranteeAccepted>
+                              </hot:GuaranteesAccepted>
+                              <!--Optional:-->
+                              <hot:Deadline>?</hot:Deadline>
+                              <!--Optional:-->
+                              <hot:GuaranteeDescription>
+                                 <!--You have a CHOICE of the next 3 items at this level-->
+                                 
+                                 
+                                 <hot:URL>?</hot:URL>
+                              </hot:GuaranteeDescription>
+                           </hot:Guarantee>
+                        </hot:GuaranteeDetails>
+                        <!--Optional:-->
+                        <hot:MealPlanCodes>
+                           <!--Optional:-->
+                           <hot:Amenities>
+                              <!--1 or more repetitions:-->
+                              <hot:Amenity amenityCode="?" amenityType="?" otherType="?" availabilityFlag="?" otherFlag="?">
+                                 <!--Zero or more repetitions:-->
+                                 <hot:amenityDescription>?</hot:amenityDescription>
+                              </hot:Amenity>
+                           </hot:Amenities>
+                        </hot:MealPlanCodes>
+                        <!--Optional:-->
+                        <hot:Packages>
+                           <!--Zero or more repetitions:-->
+                           <hot:Package packageCode="?" calculationRule="?" postingRhythm="?" quantity="?" includedInRate="?" addRateSeprateLine="?" addRateCombinedLine="?" startTime="?" endTime="?" sellSeparate="?" totalDepositAmount="?">
+                              <!--Optional:-->
+                              <hot:Amount currencyCode="?" decimals="?" currencyText="?">?</hot:Amount>
+                              <!--Zero or more repetitions:-->
+                              <hot:Description>
+                                 <!--You have a CHOICE of the next 3 items at this level-->
+                                 
+                                 <com:Image>?</com:Image>
+                                 
+                              </hot:Description>
+                              <!--Zero or more repetitions:-->
+                              <hot:ShortDescription>
+                                 <!--You have a CHOICE of the next 3 items at this level-->
+                                 
+                                 <com:Image>?</com:Image>
+                                 
+                              </hot:ShortDescription>
+                              <!--Zero or more repetitions:-->
+                              <hot:PackageDetails>
+                                 <!--Optional:-->
+                                 <hot:StartDate>?</hot:StartDate>
+                                 <!--Optional:-->
+                                 <hot:EndDate>?</hot:EndDate>
+                                 <!--Optional:-->
+                                 <hot:Allowance currencyCode="?" decimals="?" currencyText="?">?</hot:Allowance>
+                                 <!--Optional:-->
+                                 <hot:Amount currencyCode="?" decimals="?" currencyText="?">?</hot:Amount>
+                              </hot:PackageDetails>
+                              <!--Optional:-->
+                              <hot:StartDate>?</hot:StartDate>
+                              <!--Optional:-->
+                              <hot:EndDate>?</hot:EndDate>
+                           </hot:Package>
+                        </hot:Packages>
+                        <!--Optional:-->
+                        <hot:Discount>
+                           <hot:DiscountAmount>?</hot:DiscountAmount>
+                           <hot:DiscountType>?</hot:DiscountType>
+                           <hot:DiscountReason>?</hot:DiscountReason>
+                        </hot:Discount>
+                     </hot:RatePlan>
+                  </hot:RatePlans>
+                  <!--Optional:-->
+                  <hot:RoomTypes>
+                     <!--1 or more repetitions:-->
+                     <hot:RoomType roomTypeCode="?" feature="?" upgradeFromCode="?" invBlockCode="?" numberOfUnits="?" isRoom="?" effectiveDate="?" expirationDate="?" roomTypeName="?" roomToChargeCode="?" roomToChargeName="?">
+                        <!--Optional:-->
+                        <hot:RoomTypeDescription>
+                           <!--You have a CHOICE of the next 3 items at this level-->
+                           
+                           
+                           <hot:URL>?</hot:URL>
+                        </hot:RoomTypeDescription>
+                        <!--Optional:-->
+                        <hot:RoomTypeShortDescription>
+                           <!--You have a CHOICE of the next 3 items at this level-->
+                           
+                           
+                           <hot:URL>?</hot:URL>
+                        </hot:RoomTypeShortDescription>
+                        <!--Zero or more repetitions:-->
+                        <hot:RoomNumber>?</hot:RoomNumber>
+                        <!--Optional:-->
+                        <hot:RoomToChargeDescription>
+                           <!--You have a CHOICE of the next 3 items at this level-->
+                           
+                           
+                           <hot:URL>?</hot:URL>
+                        </hot:RoomToChargeDescription>
+                        <!--Optional:-->
+                        <hot:RoomToChargeShortDescription>
+                           <!--You have a CHOICE of the next 3 items at this level-->
+                           
+                           
+                           <hot:URL>?</hot:URL>
+                        </hot:RoomToChargeShortDescription>
+                        <!--Optional:-->
+                        <hot:AmenityInfo>
+                           <!--Optional:-->
+                           <hot:Amenities>
+                              <!--1 or more repetitions:-->
+                              <hot:Amenity amenityCode="?" amenityType="?" otherType="?" availabilityFlag="?" otherFlag="?">
+                                 <!--Zero or more repetitions:-->
+                                 <hot:amenityDescription>?</hot:amenityDescription>
+                              </hot:Amenity>
+                           </hot:Amenities>
+                        </hot:AmenityInfo>
+                     </hot:RoomType>
+                  </hot:RoomTypes>
+                  <!--Optional:-->
+                  <hot:RoomRates>
+                     <!--1 or more repetitions:-->
+                     <hot:RoomRate roomTypeCode="?" ratePlanCode="?" effectiveDate="?" expirationDate="?" suppressRate="?" redemRate="?" hasPackage="?" pointsChangeIndicator="?">
+                        <!--Optional:-->
+                        <hot:Rates>
+                           <!--1 or more repetitions:-->
+                           <hot:Rate effectiveDate="?" expirationDate="?" rateOccurrence="?" otherRateOccurrence="?" rateChangeIndicator="?">
+                              <!--Optional:-->
+                              <hot:Base currencyCode="?" decimals="?" currencyText="?">?</hot:Base>
+                              <!--Optional:-->
+                              <hot:AdditionalGuestAmounts>
+                                 <!--1 or more repetitions:-->
+                                 <hot:AdditionalGuestAmount additionalGuestType="?" otherAdditionalGuestType="?" quantity="?">
+                                    <!--Optional:-->
+                                    <hot:Amount currencyCode="?" decimals="?" currencyText="?">?</hot:Amount>
+                                 </hot:AdditionalGuestAmount>
+                              </hot:AdditionalGuestAmounts>
+                              <!--Optional:-->
+                              <hot:AdditionalBedAmounts>
+                                 <!--1 or more repetitions:-->
+                                 <hot:AdditionalBedAmount extraBedType="?" otherExtraBedType="?" quantity="?">
+                                    <!--Optional:-->
+                                    <hot:Amount currencyCode="?" decimals="?" currencyText="?">?</hot:Amount>
+                                 </hot:AdditionalBedAmount>
+                              </hot:AdditionalBedAmounts>
+                              <!--Optional:-->
+                              <hot:GdsTotalPricingTaxes>
+                                 <!--1 or more repetitions:-->
+                                 <hot:GdsTotalPricingTax decimals="?">
+                                    <!--Optional:-->
+                                    <hot:EffectiveStartDate>?</hot:EffectiveStartDate>
+                                    <!--Optional:-->
+                                    <hot:EffectiveEndDate>?</hot:EffectiveEndDate>
+                                    <!--Optional:-->
+                                    <hot:TaxOrFeeOrder>?</hot:TaxOrFeeOrder>
+                                    <!--Optional:-->
+                                    <hot:TaxOrFeeBasis>?</hot:TaxOrFeeBasis>
+                                    <!--Optional:-->
+                                    <hot:TaxOrFeeAmount>?</hot:TaxOrFeeAmount>
+                                    <!--Optional:-->
+                                    <hot:TaxOrFeeApplication>?</hot:TaxOrFeeApplication>
+                                    <!--Optional:-->
+                                    <hot:TaxOrFeeTypeCode>?</hot:TaxOrFeeTypeCode>
+                                    <!--Optional:-->
+                                    <hot:ChargeType>?</hot:ChargeType>
+                                    <!--Optional:-->
+                                    <hot:TaxDescription>?</hot:TaxDescription>
+                                    <!--Optional:-->
+                                    <hot:CurrencyCode>?</hot:CurrencyCode>
+                                    <!--Optional:-->
+                                    <hot:TaxOrFeeIncluded>?</hot:TaxOrFeeIncluded>
+                                 </hot:GdsTotalPricingTax>
+                              </hot:GdsTotalPricingTaxes>
+                              <!--Optional:-->
+                              <hot:Points>?</hot:Points>
+                           </hot:Rate>
+                        </hot:Rates>
+                        <!--Optional:-->
+                        <hot:InvBlockDescription>
+                           <!--You have a CHOICE of the next 3 items at this level-->
+                           
+                           
+                           <hot:URL>?</hot:URL>
+                        </hot:InvBlockDescription>
+                        <!--Optional:-->
+                        <hot:Total currencyCode="?" decimals="?" currencyText="?">?</hot:Total>
+                        <!--Optional:-->
+                        <hot:GDSTotalPricing>
+                           <!--Optional:-->
+                           <hot:TotalInclusiveRoomRate currencyCode="?" decimals="?" currencyText="?">?</hot:TotalInclusiveRoomRate>
+                           <!--Optional:-->
+                           <hot:TotalExclusiveRoomRate currencyCode="?" decimals="?" currencyText="?">?</hot:TotalExclusiveRoomRate>
+                           <!--Optional:-->
+                           <hot:TotalTax currencyCode="?" decimals="?" currencyText="?">?</hot:TotalTax>
+                           <!--Optional:-->
+                           <hot:TotalSurCharge currencyCode="?" decimals="?" currencyText="?">?</hot:TotalSurCharge>
+                           <!--Optional:-->
+                           <hot:TaxQualifier>?</hot:TaxQualifier>
+                           <!--Optional:-->
+                           <hot:MatchingQualifier>?</hot:MatchingQualifier>
+                        </hot:GDSTotalPricing>
+                        <!--Optional:-->
+                        <hot:TotalPoints>?</hot:TotalPoints>
+                        <!--Optional:-->
+                        <hot:Packages>
+                           <!--Zero or more repetitions:-->
+                           <hot:Package packageCode="?" calculationRule="?" postingRhythm="?" quantity="?" includedInRate="?" addRateSeprateLine="?" addRateCombinedLine="?" startTime="?" endTime="?" sellSeparate="?" totalDepositAmount="?">
+                              <!--Optional:-->
+                              <hot:Amount currencyCode="?" decimals="?" currencyText="?">?</hot:Amount>
+                              <!--Zero or more repetitions:-->
+                              <hot:Description>
+                                 <!--You have a CHOICE of the next 3 items at this level-->
+                                 
+                                 <com:Image>?</com:Image>
+                                 
+                              </hot:Description>
+                              <!--Zero or more repetitions:-->
+                              <hot:ShortDescription>
+                                 <!--You have a CHOICE of the next 3 items at this level-->
+                                 
+                                 <com:Image>?</com:Image>
+                                 
+                              </hot:ShortDescription>
+                              <!--Zero or more repetitions:-->
+                              <hot:PackageDetails>
+                                 <!--Optional:-->
+                                 <hot:StartDate>?</hot:StartDate>
+                                 <!--Optional:-->
+                                 <hot:EndDate>?</hot:EndDate>
+                                 <!--Optional:-->
+                                 <hot:Allowance currencyCode="?" decimals="?" currencyText="?">?</hot:Allowance>
+                                 <!--Optional:-->
+                                 <hot:Amount currencyCode="?" decimals="?" currencyText="?">?</hot:Amount>
+                              </hot:PackageDetails>
+                              <!--Optional:-->
+                              <hot:StartDate>?</hot:StartDate>
+                              <!--Optional:-->
+                              <hot:EndDate>?</hot:EndDate>
+                           </hot:Package>
+                        </hot:Packages>
+                     </hot:RoomRate>
+                  </hot:RoomRates>
+                  <!--Optional:-->
+                  <hot:GuestCounts isPerRoom="?">
+                     <!--1 or more repetitions:-->
+                     <hot:GuestCount ageQualifyingCode="?" otherAgeQualifyingCode="?" age="?" count="?"/>
+                  </hot:GuestCounts>
+                  <!--Optional:-->
+                  <hot:TimeSpan>
+                     <hot:StartDate>?</hot:StartDate>
+                     <!--You have a CHOICE of the next 2 items at this level-->
+                     <hot:EndDate>?</hot:EndDate>
+                     <hot:Duration>?</hot:Duration>
+                  </hot:TimeSpan>
+                  <!--Optional:-->
+                  <hot:Guarantee guaranteeType="?" mandatoryDeposit="?" cancellationRequired="?" creditCardRequired="?" paymentType="?" requirementCode="?">
+                     <!--Optional:-->
+                     <hot:GuaranteesAccepted>
+                        <!--1 or more repetitions:-->
+                        <hot:GuaranteeAccepted agentPhone="?">
+                           <!--Optional:-->
+                           <hot:GuaranteeCreditCard cardType="?" otherCardType="?" chipAndPin="?">
+                              <!--Optional:-->
+                              <com:cardCode>?</com:cardCode>
+                              <!--Optional:-->
+                              <com:cardHolderName>?</com:cardHolderName>
+                              <com:cardNumber>?</com:cardNumber>
+                              <!--Optional:-->
+                              <com:seriesCode>?</com:seriesCode>
+                              <!--Optional:-->
+                              <com:Track2>?</com:Track2>
+                              <!--Optional:-->
+                              <com:effectiveDate>?</com:effectiveDate>
+                              <com:expirationDate>?</com:expirationDate>
+                              <!--Optional:-->
+                              <com:EncryptedSwipe>
+                                 <com:TrackIndicator>?</com:TrackIndicator>
+                                 <com:SwiperType>?</com:SwiperType>
+                                 <!--Optional:-->
+                                 <com:SwiperID>?</com:SwiperID>
+                                 <com:MaskedPAN>?</com:MaskedPAN>
+                                 <!--Optional:-->
+                                 <com:Track1>?</com:Track1>
+                                 <!--Optional:-->
+                                 <com:Track2>?</com:Track2>
+                                 <com:KeySerialNumber>?</com:KeySerialNumber>
+                              </com:EncryptedSwipe>
+                           </hot:GuaranteeCreditCard>
+                           <!--Optional:-->
+                           <hot:GuaranteeTravelAgent type="?" source="?">?</hot:GuaranteeTravelAgent>
+                           <!--Optional:-->
+                           <hot:GuaranteeCompany type="?" source="?">?</hot:GuaranteeCompany>
+                        </hot:GuaranteeAccepted>
+                     </hot:GuaranteesAccepted>
+                     <!--Optional:-->
+                     <hot:Deadline>?</hot:Deadline>
+                     <!--Optional:-->
+                     <hot:GuaranteeDescription>
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        
+                        
+                        <hot:URL>?</hot:URL>
+                     </hot:GuaranteeDescription>
+                  </hot:Guarantee>
+                  <!--Optional:-->
+                  <hot:Payment>
+                     <!--You have a CHOICE of the next 2 items at this level-->
+                     <!--Optional:-->
+                     <hot:PaymentsAccepted>
+                        <!--1 or more repetitions:-->
+                        <hot:PaymentType>
+                           <!--You have a CHOICE of the next 3 items at this level-->
+                           <!--Optional:-->
+                           
+                           <!--Optional:-->
+                           
+                           <!--Optional:-->
+                           <hot:OtherPayment type="?" value="?" source="?"/>
+                        </hot:PaymentType>
+                     </hot:PaymentsAccepted>
+                     <!--Optional:-->
+                     
+                  </hot:Payment>
+                  <!--Optional:-->
+                  <hot:CreditCardDeposit cardType="?" otherCardType="?" chipAndPin="?">
+                     <!--Optional:-->
+                     <com:cardCode>?</com:cardCode>
+                     <!--Optional:-->
+                     <com:cardHolderName>?</com:cardHolderName>
+                     <com:cardNumber>?</com:cardNumber>
+                     <!--Optional:-->
+                     <com:seriesCode>?</com:seriesCode>
+                     <!--Optional:-->
+                     <com:Track2>?</com:Track2>
+                     <!--Optional:-->
+                     <com:effectiveDate>?</com:effectiveDate>
+                     <com:expirationDate>?</com:expirationDate>
+                     <!--Optional:-->
+                     <com:EncryptedSwipe>
+                        <com:TrackIndicator>?</com:TrackIndicator>
+                        <com:SwiperType>?</com:SwiperType>
+                        <!--Optional:-->
+                        <com:SwiperID>?</com:SwiperID>
+                        <com:MaskedPAN>?</com:MaskedPAN>
+                        <!--Optional:-->
+                        <com:Track1>?</com:Track1>
+                        <!--Optional:-->
+                        <com:Track2>?</com:Track2>
+                        <com:KeySerialNumber>?</com:KeySerialNumber>
+                     </com:EncryptedSwipe>
+                     <!--Optional:-->
+                     <hot:CIDNumber>?</hot:CIDNumber>
+                     <!--Optional:-->
+                     <hot:Address addressType="?" otherAddressType="?" languageCode="?">
+                        <!--0 to 5 repetitions:-->
+                        <com:AddressLine>?</com:AddressLine>
+                        <!--Optional:-->
+                        <com:cityName>?</com:cityName>
+                        <!--Optional:-->
+                        <com:stateProv>?</com:stateProv>
+                        <!--Optional:-->
+                        <com:countryCode>?</com:countryCode>
+                        <!--Optional:-->
+                        <com:postalCode>?</com:postalCode>
+                     </hot:Address>
+                     <!--Optional:-->
+                     <hot:IssueNumber>?</hot:IssueNumber>
+                     <!--Optional:-->
+                     <hot:ApprovalCode>?</hot:ApprovalCode>
+                     <!--Optional:-->
+                     <hot:DepositAmount currencyCode="?" decimals="?" currencyText="?">?</hot:DepositAmount>
+                  </hot:CreditCardDeposit>
+                  <!--Optional:-->
+                  <hot:CancelPenalties>
+                     <!--1 or more repetitions:-->
+                     <hot:CancelPenalty>
+                        <!--Optional:-->
+                        <hot:Deadline>?</hot:Deadline>
+                        <!--Optional:-->
+                        <hot:PenaltyDescription>
+                           <!--You have a CHOICE of the next 3 items at this level-->
+                           
+                           
+                           <hot:URL>?</hot:URL>
+                        </hot:PenaltyDescription>
+                     </hot:CancelPenalty>
+                  </hot:CancelPenalties>
+                  <!--Optional:-->
+                  <hot:CancelTerm cancelType="?" otherCancelType="?" cancelReasonCode="?" cancelNumber="?" cancelDate="?" cancelBy="?">
+                     <!--Optional:-->
+                     <hot:CancelReason>
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        
+                        
+                        <hot:URL>?</hot:URL>
+                     </hot:CancelReason>
+                  </hot:CancelTerm>
+                  <!--Optional:-->
+                  <hot:HotelReference chainCode="?" hotelCode="?">?</hot:HotelReference>
+                  <!--Optional:-->
+                  <hot:HotelContact>
+                     <!--Optional:-->
+                     <hot:Addresses>
+                        <!--1 or more repetitions:-->
+                        <hot:Address addressType="?" otherAddressType="?" languageCode="?">
+                           <!--0 to 5 repetitions:-->
+                           <com:AddressLine>?</com:AddressLine>
+                           <!--Optional:-->
+                           <com:cityName>?</com:cityName>
+                           <!--Optional:-->
+                           <com:stateProv>?</com:stateProv>
+                           <!--Optional:-->
+                           <com:countryCode>?</com:countryCode>
+                           <!--Optional:-->
+                           <com:postalCode>?</com:postalCode>
+                        </hot:Address>
+                     </hot:Addresses>
+                     <!--Optional:-->
+                     <hot:ContactEmails>
+                        <!--1 or more repetitions:-->
+                        <hot:ContactEmail>?</hot:ContactEmail>
+                     </hot:ContactEmails>
+                     <!--Optional:-->
+                     <hot:ContactPhones>
+                        <!--Zero or more repetitions:-->
+                        <hot:Phone phoneType="?" phoneRole="?">
+                           <!--You have a CHOICE of the next 2 items at this level-->
+                           <com:PhoneNumber>?</com:PhoneNumber>
+                           <!--Optional:-->
+                           
+                        </hot:Phone>
+                     </hot:ContactPhones>
+                     <!--Optional:-->
+                     <hot:HotelInformation>
+                        <!--1 or more repetitions:-->
+                        <hot:HotelInfo hotelInfoType="?" otherHotelInfoType="?">
+                           <!--You have a CHOICE of the next 3 items at this level-->
+                           
+                           <com:Image>?</com:Image>
+                           
+                        </hot:HotelInfo>
+                     </hot:HotelInformation>
+                     <!--Optional:-->
+                     <hot:URIs>
+                        <!--1 or more repetitions:-->
+                        <hot:URI>?</hot:URI>
+                     </hot:URIs>
+                     <!--Optional:-->
+                     <hot:Vector>
+                        <!--Optional:-->
+                        <hot:Direction vectorDirection="?" otherVectorDirection="?"/>
+                        <!--Optional:-->
+                        <hot:Distance distanceUnit="?" otherDistanceUnit="?">?</hot:Distance>
+                     </hot:Vector>
+                  </hot:HotelContact>
+                  <!--Optional:-->
+                  <hot:Total currencyCode="?" decimals="?" currencyText="?">?</hot:Total>
+                  <!--Optional:-->
+                  <hot:ResGuestRPHs>
+                     <!--1 or more repetitions:-->
+                     <hot:ResGuestRPH RPH="?"/>
+                  </hot:ResGuestRPHs>
+                  <!--Optional:-->
+                  <hot:Comments>
+                     <!--1 or more repetitions:-->
+                     <hot:Comment commentOriginatorCode="?" guestViewable="?">
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        
+                        
+                        <hot:URL>?</hot:URL>
+                     </hot:Comment>
+                  </hot:Comments>
+                  <!--Optional:-->
+                  <hot:SpecialRequests>
+                     <!--Zero or more repetitions:-->
+                     <hot:SpecialRequest requestCode="?">
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        
+                        
+                        <hot:URL>?</hot:URL>
+                     </hot:SpecialRequest>
+                  </hot:SpecialRequests>
+                  <!--Optional:-->
+                  <hot:Packages>
+                     <!--Zero or more repetitions:-->
+                     <hot:Package packageCode="?" calculationRule="?" postingRhythm="?" quantity="?" includedInRate="?" addRateSeprateLine="?" addRateCombinedLine="?" startTime="?" endTime="?" sellSeparate="?" totalDepositAmount="?">
+                        <!--Optional:-->
+                        <hot:Amount currencyCode="?" decimals="?" currencyText="?">?</hot:Amount>
+                        <!--Zero or more repetitions:-->
+                        <hot:Description>
+                           <!--You have a CHOICE of the next 3 items at this level-->
+                           
+                           <com:Image>?</com:Image>
+                           
+                        </hot:Description>
+                        <!--Zero or more repetitions:-->
+                        <hot:ShortDescription>
+                           <!--You have a CHOICE of the next 3 items at this level-->
+                           
+                           <com:Image>?</com:Image>
+                           
+                        </hot:ShortDescription>
+                        <!--Zero or more repetitions:-->
+                        <hot:PackageDetails>
+                           <!--Optional:-->
+                           <hot:StartDate>?</hot:StartDate>
+                           <!--Optional:-->
+                           <hot:EndDate>?</hot:EndDate>
+                           <!--Optional:-->
+                           <hot:Allowance currencyCode="?" decimals="?" currencyText="?">?</hot:Allowance>
+                           <!--Optional:-->
+                           <hot:Amount currencyCode="?" decimals="?" currencyText="?">?</hot:Amount>
+                        </hot:PackageDetails>
+                        <!--Optional:-->
+                        <hot:StartDate>?</hot:StartDate>
+                        <!--Optional:-->
+                        <hot:EndDate>?</hot:EndDate>
+                     </hot:Package>
+                  </hot:Packages>
+                  <!--Optional:-->
+                  <hot:HotelExtendedInformation>
+                     <!--Optional:-->
+                     <hot:HotelInformation>
+                        <!--1 or more repetitions:-->
+                        <hot:HotelInfo hotelInfoType="?" otherHotelInfoType="?">
+                           <!--You have a CHOICE of the next 3 items at this level-->
+                           
+                           <com:Image>?</com:Image>
+                           
+                        </hot:HotelInfo>
+                     </hot:HotelInformation>
+                     <!--Optional:-->
+                     <hot:PaymentMethods>
+                        <!--1 or more repetitions:-->
+                        <hot:PaymentType>
+                           <!--You have a CHOICE of the next 3 items at this level-->
+                           <!--Optional:-->
+                           
+                           <!--Optional:-->
+                           
+                           <!--Optional:-->
+                           <hot:OtherPayment type="?" value="?" source="?"/>
+                        </hot:PaymentType>
+                     </hot:PaymentMethods>
+                     <!--Optional:-->
+                     <hot:AmenityInfo>
+                        <!--Optional:-->
+                        <hot:Amenities>
+                           <!--1 or more repetitions:-->
+                           <hot:Amenity amenityCode="?" amenityType="?" otherType="?" availabilityFlag="?" otherFlag="?">
+                              <!--Zero or more repetitions:-->
+                              <hot:amenityDescription>?</hot:amenityDescription>
+                           </hot:Amenity>
+                        </hot:Amenities>
+                     </hot:AmenityInfo>
+                     <!--Optional:-->
+                     <hot:Position latitude="?" longitude="?" altitude="?"/>
+                     <!--Optional:-->
+                     <hot:FacilityInfo dateOpened="?" dateRennovated="?">
+                        <!--Optional:-->
+                        <hot:GuestRooms totalRooms="?">
+                           <!--1 or more repetitions:-->
+                           <hot:GuestRoom code="?" maxOccupancy="?">
+                              <!--Optional:-->
+                              <hot:RoomDescription>
+                                 <!--You have a CHOICE of the next 3 items at this level-->
+                                 
+                                 <com:Image>?</com:Image>
+                                 
+                              </hot:RoomDescription>
+                              <!--Optional:-->
+                              <hot:AmenityInfo>
+                                 <!--Optional:-->
+                                 <hot:Amenities>
+                                    <!--1 or more repetitions:-->
+                                    <hot:Amenity amenityCode="?" amenityType="?" otherType="?" availabilityFlag="?" otherFlag="?">
+                                       <!--Zero or more repetitions:-->
+                                       <hot:amenityDescription>?</hot:amenityDescription>
+                                    </hot:Amenity>
+                                 </hot:Amenities>
+                              </hot:AmenityInfo>
+                           </hot:GuestRoom>
+                        </hot:GuestRooms>
+                        <!--Optional:-->
+                        <hot:Restaurants>
+                           <!--Zero or more repetitions:-->
+                           <hot:Restaurant RestaurantName="?" MaxSeatingCapacity="?" MaxSingleParty="?" OfferBreakfast="?" OfferLunch="?" OfferDinner="?" OfferBrunch="?">
+                              <!--0 to 5 repetitions:-->
+                              <hot:RestaurantDescription>
+                                 <!--You have a CHOICE of the next 3 items at this level-->
+                                 
+                                 
+                                 <hot:URL>?</hot:URL>
+                              </hot:RestaurantDescription>
+                              <!--Optional:-->
+                              <hot:RelativePosition>
+                                 <!--Optional:-->
+                                 <hot:Direction vectorDirection="?" otherVectorDirection="?"/>
+                                 <!--Optional:-->
+                                 <hot:Distance distanceUnit="?" otherDistanceUnit="?">?</hot:Distance>
+                              </hot:RelativePosition>
+                              <!--Optional:-->
+                              <hot:Cuisines>
+                                 <!--1 or more repetitions:-->
+                                 <hot:Cuisine Code="?" Description="?"/>
+                              </hot:Cuisines>
+                              <!--Optional:-->
+                              <hot:RestaurantContacts>
+                                 <!--1 or more repetitions:-->
+                                 <hot:Address addressType="?" otherAddressType="?" languageCode="?">
+                                    <!--0 to 5 repetitions:-->
+                                    <com:AddressLine>?</com:AddressLine>
+                                    <!--Optional:-->
+                                    <com:cityName>?</com:cityName>
+                                    <!--Optional:-->
+                                    <com:stateProv>?</com:stateProv>
+                                    <!--Optional:-->
+                                    <com:countryCode>?</com:countryCode>
+                                    <!--Optional:-->
+                                    <com:postalCode>?</com:postalCode>
+                                 </hot:Address>
+                              </hot:RestaurantContacts>
+                           </hot:Restaurant>
+                        </hot:Restaurants>
+                        <!--Optional:-->
+                        <hot:MeetingRooms MeetingRoomCount="?" SmallestRoomSpace="?" LargestRoomSpace="?" TotalRoomSpace="?" LargestSeatingCapacity="?" SecondLargestSeatingCapacity="?" SmallestSeatingCapacity="?">
+                           <!--Zero or more repetitions:-->
+                           <hot:MeetingRoom Irregular="?" PropertySystemName="?" RoomName="?" Sort="?" MeetingRoomCapacity="?">
+                              <!--Optional:-->
+                              <hot:Codes>
+                                 <!--1 or more repetitions:-->
+                                 <hot:Code Code="?">
+                                    <!--Optional:-->
+                                    <hot:Charge>?</hot:Charge>
+                                    <!--0 to 5 repetitions:-->
+                                    <hot:Description>
+                                       <!--You have a CHOICE of the next 3 items at this level-->
+                                       
+                                       
+                                       <hot:URL>?</hot:URL>
+                                    </hot:Description>
+                                 </hot:Code>
+                              </hot:Codes>
+                              <!--Optional:-->
+                              <hot:Description>
+                                 <!--You have a CHOICE of the next 3 items at this level-->
+                                 
+                                 
+                                 <hot:URL>?</hot:URL>
+                              </hot:Description>
+                           </hot:MeetingRoom>
+                        </hot:MeetingRooms>
+                        <!--Optional:-->
+                        <hot:Attractions>
+                           <!--Zero or more repetitions:-->
+                           <hot:Attraction>
+                              <!--Optional:-->
+                              <hot:AttractionCode>?</hot:AttractionCode>
+                              <!--Optional:-->
+                              <hot:AttractionName>?</hot:AttractionName>
+                              <!--Optional:-->
+                              <hot:AttractionType>?</hot:AttractionType>
+                              <!--Optional:-->
+                              <hot:AttractionInformation>
+                                 <!--1 or more repetitions:-->
+                                 <hot:AttractionInfo attractionInfoType="?" otherAttractionInfoType="?">
+                                    <!--You have a CHOICE of the next 3 items at this level-->
+                                    
+                                    <com:Image>?</com:Image>
+                                    
+                                 </hot:AttractionInfo>
+                              </hot:AttractionInformation>
+                              <!--Optional:-->
+                              <hot:Distance>?</hot:Distance>
+                              <!--Optional:-->
+                              <hot:DistanceType>?</hot:DistanceType>
+                              <!--Optional:-->
+                              <hot:DrivingTime>?</hot:DrivingTime>
+                              <!--Optional:-->
+                              <hot:City>?</hot:City>
+                              <!--Optional:-->
+                              <hot:State>?</hot:State>
+                              <!--Optional:-->
+                              <hot:ZipCode>?</hot:ZipCode>
+                              <!--Optional:-->
+                              <hot:HoursOfOperation>?</hot:HoursOfOperation>
+                              <!--Optional:-->
+                              <hot:Latitude>?</hot:Latitude>
+                              <!--Optional:-->
+                              <hot:Longitude>?</hot:Longitude>
+                              <!--Optional:-->
+                              <hot:PriceRange>?</hot:PriceRange>
+                              <!--Optional:-->
+                              <hot:DisplaySequence>?</hot:DisplaySequence>
+                           </hot:Attraction>
+                        </hot:Attractions>
+                     </hot:FacilityInfo>
+                     <!--Optional:-->
+                     <hot:AlternateProperties>
+                        <!--1 or more repetitions:-->
+                        <hot:HotelReference chainCode="?" hotelCode="?">?</hot:HotelReference>
+                     </hot:AlternateProperties>
+                  </hot:HotelExtendedInformation>
+                  <!--Optional:-->
+                  <hot:DailyChargePoints>
+                     <!--1 or more repetitions:-->
+                     <hot:Points>
+                        <!--You may enter the following 2 items in any order-->
+                        <hot:Dates>
+                           <hot:StartDate>?</hot:StartDate>
+                           <!--You have a CHOICE of the next 2 items at this level-->
+                           <hot:EndDate>?</hot:EndDate>
+                           <hot:Duration>?</hot:Duration>
+                        </hot:Dates>
+                        <hot:Points>?</hot:Points>
+                     </hot:Points>
+                  </hot:DailyChargePoints>
+                  <!--Optional:-->
+                  <hot:MemberAwardInfo>
+                     <!--You may enter the following 6 items in any order-->
+                     <hot:awardType>?</hot:awardType>
+                     <hot:membershipID>?</hot:membershipID>
+                     <!--Optional:-->
+                     <hot:pointsUsedForReservation>?</hot:pointsUsedForReservation>
+                     <!--Optional:-->
+                     <hot:redemRateCode>?</hot:redemRateCode>
+                     <!--Optional:-->
+                     <hot:stayDate>
+                        <hot:StartDate>?</hot:StartDate>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <hot:EndDate>?</hot:EndDate>
+                        <hot:Duration>?</hot:Duration>
+                     </hot:stayDate>
+                     <!--Optional:-->
+                     <hot:overridePenalty>?</hot:overridePenalty>
+                  </hot:MemberAwardInfo>
+                  <!--Optional:-->
+                  <hot:ExpectedCharges TotalRoomRateAndPackages="?" TotalTaxesAndFees="?" TaxInclusive="?" decimals="?">
+                     <!--1 or more repetitions:-->
+                     <hot:ChargesForPostingDate PostingDate="?" TotalCharges="?">
+                        <hot:RoomRateAndPackages TotalCharges="?" decimals="?">
+                           <!--Zero or more repetitions:-->
+                           <hot:Charges>
+                              <!--You may enter the following 2 items in any order-->
+                              <hot:Description>?</hot:Description>
+                              <hot:Amount currencyCode="?" decimals="?" currencyText="?">?</hot:Amount>
+                           </hot:Charges>
+                        </hot:RoomRateAndPackages>
+                        <hot:TaxesAndFees TotalCharges="?" decimals="?">
+                           <!--Zero or more repetitions:-->
+                           <hot:Charges>
+                              <!--You may enter the following 2 items in any order-->
+                              <hot:Description>?</hot:Description>
+                              <hot:Amount currencyCode="?" decimals="?" currencyText="?">?</hot:Amount>
+                           </hot:Charges>
+                        </hot:TaxesAndFees>
+                     </hot:ChargesForPostingDate>
+                  </hot:ExpectedCharges>
+                  <!--Optional:-->
+                  <hot:GdsTotalPricing>
+                     <!--Optional:-->
+                     <hot:TotalInclusiveRoomRate currencyCode="?" decimals="?" currencyText="?">?</hot:TotalInclusiveRoomRate>
+                     <!--Optional:-->
+                     <hot:TotalExclusiveRoomRate currencyCode="?" decimals="?" currencyText="?">?</hot:TotalExclusiveRoomRate>
+                     <!--Optional:-->
+                     <hot:TotalTax currencyCode="?" decimals="?" currencyText="?">?</hot:TotalTax>
+                     <!--Optional:-->
+                     <hot:TotalSurCharge currencyCode="?" decimals="?" currencyText="?">?</hot:TotalSurCharge>
+                     <!--Optional:-->
+                     <hot:TaxQualifier>?</hot:TaxQualifier>
+                     <!--Optional:-->
+                     <hot:MatchingQualifier>?</hot:MatchingQualifier>
+                  </hot:GdsTotalPricing>
+               </hot:RoomStay>
+            </res1:RoomStays>
+            <!--Optional:-->
+            <res1:ResGuests>
+               <!--1 or more repetitions:-->
+               <res1:ResGuest resGuestRPH="?" ageQualifyingCode="?" otherAgeQualifyingCode="?" arrivalTime="?" departureTime="?">
+                  <!--Optional:-->
+                  <res1:Profiles>
+                     <!--Zero or more repetitions:-->
+                     <name:Profile nameType="?" protected="?" languageCode="?" nationality="?" vipCode="?" taxExempt="?" insertUser="?" insertDate="?" updateUser="?" updateDate="?" inactiveDate="?">
+                        <!--Optional:-->
+                        <name:ProfileIDs>
+                           <!--Zero or more repetitions:-->
+                           <com:UniqueID type="?" source="?">?</com:UniqueID>
+                        </name:ProfileIDs>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <name:Customer gender="?" birthDate="?">
+                           <name:PersonName nameOrdered="?" familiarName="?">
+                              <!--Zero or more repetitions:-->
+                              <com:nameTitle>?</com:nameTitle>
+                              <!--Optional:-->
+                              <com:firstName>?</com:firstName>
+                              <!--Zero or more repetitions:-->
+                              <com:middleName>?</com:middleName>
+                              <com:lastName>?</com:lastName>
+                              <!--Zero or more repetitions:-->
+                              <com:nameSuffix>?</com:nameSuffix>
+                           </name:PersonName>
+                           <!--Optional:-->
+                           <name:NativeName nameOrdered="?" familiarName="?" languageCode="?">
+                              <!--Zero or more repetitions:-->
+                              <com:nameTitle>?</com:nameTitle>
+                              <!--Optional:-->
+                              <com:firstName>?</com:firstName>
+                              <!--Zero or more repetitions:-->
+                              <com:middleName>?</com:middleName>
+                              <com:lastName>?</com:lastName>
+                              <!--Zero or more repetitions:-->
+                              <com:nameSuffix>?</com:nameSuffix>
+                           </name:NativeName>
+                           <!--Optional:-->
+                           <name:BusinessTitle>?</name:BusinessTitle>
+                           <!--Optional:-->
+                           <name:GovernmentIDList>
+                              <!--Zero or more repetitions:-->
+                              <com:GovernmentID documentType="?" documentNumber="?" effectiveDate="?" expirationDate="?" placeOfIssue="?" countryOfIssue="?"/>
+                           </name:GovernmentIDList>
+                        </name:Customer>
+                        <name:Company commissionCode="?">
+                           <name:CompanyName>?</name:CompanyName>
+                           <name:CompanyType>?</name:CompanyType>
+                           <!--Optional:-->
+                           <name:CompanyID>?</name:CompanyID>
+                        </name:Company>
+                        <!--Optional:-->
+                        <name:CreditCards>
+                           <!--Zero or more repetitions:-->
+                           <name:NameCreditCard cardType="?" otherCardType="?" chipAndPin="?" operaId="?" externalId="?" primary="?" displaySequence="?" insertUser="?" insertDate="?" updateUser="?" updateDate="?" inactiveDate="?">
+                              <!--Optional:-->
+                              <com:cardCode>?</com:cardCode>
+                              <!--Optional:-->
+                              <com:cardHolderName>?</com:cardHolderName>
+                              <com:cardNumber>?</com:cardNumber>
+                              <!--Optional:-->
+                              <com:seriesCode>?</com:seriesCode>
+                              <!--Optional:-->
+                              <com:Track2>?</com:Track2>
+                              <!--Optional:-->
+                              <com:effectiveDate>?</com:effectiveDate>
+                              <com:expirationDate>?</com:expirationDate>
+                              <!--Optional:-->
+                              <com:EncryptedSwipe>
+                                 <com:TrackIndicator>?</com:TrackIndicator>
+                                 <com:SwiperType>?</com:SwiperType>
+                                 <!--Optional:-->
+                                 <com:SwiperID>?</com:SwiperID>
+                                 <com:MaskedPAN>?</com:MaskedPAN>
+                                 <!--Optional:-->
+                                 <com:Track1>?</com:Track1>
+                                 <!--Optional:-->
+                                 <com:Track2>?</com:Track2>
+                                 <com:KeySerialNumber>?</com:KeySerialNumber>
+                              </com:EncryptedSwipe>
+                           </name:NameCreditCard>
+                        </name:CreditCards>
+                        <!--Optional:-->
+                        <name:Addresses>
+                           <!--Zero or more repetitions:-->
+                           <name:NameAddress addressType="?" otherAddressType="?" languageCode="?" operaId="?" externalId="?" primary="?" displaySequence="?" insertUser="?" insertDate="?" updateUser="?" updateDate="?" inactiveDate="?">
+                              <!--0 to 5 repetitions:-->
+                              <com:AddressLine>?</com:AddressLine>
+                              <!--Optional:-->
+                              <com:cityName>?</com:cityName>
+                              <!--Optional:-->
+                              <com:stateProv>?</com:stateProv>
+                              <!--Optional:-->
+                              <com:countryCode>?</com:countryCode>
+                              <!--Optional:-->
+                              <com:postalCode>?</com:postalCode>
+                           </name:NameAddress>
+                        </name:Addresses>
+                        <!--Optional:-->
+                        <name:Blacklist flag="?">?</name:Blacklist>
+                        <!--Optional:-->
+                        <name:Phones>
+                           <!--Zero or more repetitions:-->
+                           <name:NamePhone phoneType="?" phoneRole="?" operaId="?" externalId="?" primary="?" displaySequence="?" insertUser="?" insertDate="?" updateUser="?" updateDate="?" inactiveDate="?">
+                              <!--You have a CHOICE of the next 2 items at this level-->
+                              <com:PhoneNumber>?</com:PhoneNumber>
+                              <!--Optional:-->
+                              
+                           </name:NamePhone>
+                        </name:Phones>
+                        <!--Optional:-->
+                        <name:EMails>
+                           <!--Zero or more repetitions:-->
+                           <name:NameEmail operaId="?" externalId="?" primary="?" displaySequence="?" insertUser="?" insertDate="?" updateUser="?" updateDate="?" inactiveDate="?" emailType="?" emailFormat="?">?</name:NameEmail>
+                        </name:EMails>
+                        <!--Optional:-->
+                        <name:Preferences>
+                           <!--Zero or more repetitions:-->
+                           <name:Preference resortCode="?" preferenceType="?" otherPreferenceType="?" preferenceValue="?" insertUser="?" insertDate="?" updateUser="?" updateDate="?" inactiveDate="?">
+                              <!--Optional:-->
+                              <name:PreferenceDescription>
+                                 <!--You have a CHOICE of the next 3 items at this level-->
+                                 
+                                 <com:Image>?</com:Image>
+                                 
+                              </name:PreferenceDescription>
+                           </name:Preference>
+                        </name:Preferences>
+                        <!--Optional:-->
+                        <name:Memberships>
+                           <!--Zero or more repetitions:-->
+                           <name:NameMembership operaId="?" externalId="?" primary="?" preferred="?" central_setup_yn="?" membership_class="?" points_label="?" status="?" displaySequence="?" insertUser="?" insertDate="?" updateUser="?" updateDate="?" inactiveDate="?">
+                              <!--Optional:-->
+                              <com:membershipType>?</com:membershipType>
+                              <com:membershipNumber>?</com:membershipNumber>
+                              <!--Optional:-->
+                              <com:membershipLevel>?</com:membershipLevel>
+                              <!--Optional:-->
+                              <com:membershipNextLevel>?</com:membershipNextLevel>
+                              <!--Optional:-->
+                              <com:memberName>?</com:memberName>
+                              <!--Optional:-->
+                              <com:effectiveDate>?</com:effectiveDate>
+                              <!--Optional:-->
+                              <com:expirationDate>?</com:expirationDate>
+                              <!--Optional:-->
+                              <com:currentPoints>?</com:currentPoints>
+                              <!--Optional:-->
+                              <com:enrollmentCode>?</com:enrollmentCode>
+                              <!--Optional:-->
+                              <com:ResvNameId>
+                                 <!--Zero or more repetitions:-->
+                                 <com:UniqueID type="?" source="?">?</com:UniqueID>
+                              </com:ResvNameId>
+                              <!--Optional:-->
+                              <com:membershipid type="?" source="?">?</com:membershipid>
+                              <!--Optional:-->
+                              <com:transferPoints>?</com:transferPoints>
+                              <!--Optional:-->
+                              <com:enrollmentSource>?</com:enrollmentSource>
+                              <!--Optional:-->
+                              <com:enrolledAt>?</com:enrolledAt>
+                              <!--Optional:-->
+                              <com:awardPointsToExpires>
+                                 <!--Zero or more repetitions:-->
+                                 <com:AwardPointsToExpire expirationDate="?" totalToExpire="?" expireByDate="?"/>
+                              </com:awardPointsToExpires>
+                           </name:NameMembership>
+                        </name:Memberships>
+                        <!--Optional:-->
+                        <name:NegotiatedRates>
+                           <!--Zero or more repetitions:-->
+                           <name:NegotiatedRate operaId="?" resortCode="?" rateCode="?" commissionCode="?" beginDate="?" endDate="?" displaySequence="?" insertUser="?" insertDate="?" updateUser="?" updateDate="?" inactiveDate="?"/>
+                        </name:NegotiatedRates>
+                        <!--Optional:-->
+                        <name:Comments>
+                           <!--Zero or more repetitions:-->
+                           <name:Comment operaId="?" externalId="?" commentTitle="?" insertUser="?" insertDate="?" updateUser="?" updateDate="?" inactiveDate="?">
+                              <!--You have a CHOICE of the next 3 items at this level-->
+                              
+                              <com:Image>?</com:Image>
+                              
+                           </name:Comment>
+                        </name:Comments>
+                        <!--Optional:-->
+                        <name:UserDefinedValues>
+                           <!--Zero or more repetitions:-->
+                           <com:UserDefinedValue valueName="?">
+                              <!--You have a CHOICE of the next 3 items at this level-->
+                              
+                              
+                              <com:NumericValue>?</com:NumericValue>
+                           </com:UserDefinedValue>
+                        </name:UserDefinedValues>
+                        <!--Optional:-->
+                        <name:Privacy>
+                           <!--1 or more repetitions:-->
+                           <name:PrivacyOption OptionType="?" OptionValue="?"/>
+                        </name:Privacy>
+                        <!--Optional:-->
+                        <name:UserGroup groupType="?"/>
+                        <!--Optional:-->
+                        <name:StayHistory>
+                           <!--Optional:-->
+                           <name:LastStay>?</name:LastStay>
+                           <!--Optional:-->
+                           <name:TotalNumberOfStays>?</name:TotalNumberOfStays>
+                           <!--Optional:-->
+                           <name:LastRoomNumber>?</name:LastRoomNumber>
+                           <!--Optional:-->
+                           <name:LastRate currencyCode="?" decimals="?" currencyText="?">?</name:LastRate>
+                        </name:StayHistory>
+                        <!--Optional:-->
+                        <name:Id documentType="?" documentNumber="?" effectiveDate="?" expirationDate="?" placeOfIssue="?" countryOfIssue="?"/>
+                        <!--Optional:-->
+                        <name:KeyWord>
+                           <!--Zero or more repetitions:-->
+                           <name:KeyWord>
+                              <!--Optional:-->
+                              <name:Type>?</name:Type>
+                              <!--Optional:-->
+                              <name:Value>?</name:Value>
+                           </name:KeyWord>
+                        </name:KeyWord>
+                     </name:Profile>
+                  </res1:Profiles>
+                  <!--Optional:-->
+                  <res1:SpecialRequests>
+                     <!--Zero or more repetitions:-->
+                     <hot:SpecialRequest requestCode="?">
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        
+                        
+                        <hot:URL>?</hot:URL>
+                     </hot:SpecialRequest>
+                  </res1:SpecialRequests>
+                  <!--Optional:-->
+                  <res1:Comments>
+                     <!--1 or more repetitions:-->
+                     <hot:Comment commentOriginatorCode="?" guestViewable="?">
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        
+                        
+                        <hot:URL>?</hot:URL>
+                     </hot:Comment>
+                  </res1:Comments>
+                  <!--Optional:-->
+                  <res1:ArrivalTransport type="?" id="?" carrierCode="?" locationCode="?" time="?"/>
+                  <!--Optional:-->
+                  <res1:DepartureTransport type="?" id="?" carrierCode="?" locationCode="?" time="?"/>
+                  <!--Optional:-->
+                  <res1:GuestCounts isPerRoom="?">
+                     <!--1 or more repetitions:-->
+                     <hot:GuestCount ageQualifyingCode="?" otherAgeQualifyingCode="?" age="?" count="?"/>
+                  </res1:GuestCounts>
+                  <!--Optional:-->
+                  <res1:InHouseTimeSpan>
+                     <hot:StartDate>?</hot:StartDate>
+                     <!--You have a CHOICE of the next 2 items at this level-->
+                     <hot:EndDate>?</hot:EndDate>
+                     <hot:Duration>?</hot:Duration>
+                  </res1:InHouseTimeSpan>
+               </res1:ResGuest>
+            </res1:ResGuests>
+            <!--Optional:-->
+            <res1:WrittenConfInst languageId="?" addresseeName="?" address="?" telephone="?">
+               <!--Optional:-->
+               <res1:Email>?</res1:Email>
+            </res1:WrittenConfInst>
+            <!--Optional:-->
+            <res1:ReservationHistory insertUser="?" insertDate="?" updateUser="?" updateDate="?" inactiveDate="?" transactions="?"/>
+            <!--Optional:-->
+            <res1:UserDefinedValues>
+               <!--Zero or more repetitions:-->
+               <com:UserDefinedValue valueName="?">
+                  <!--You have a CHOICE of the next 3 items at this level-->
+                  
+                  
+                  <com:NumericValue>?</com:NumericValue>
+               </com:UserDefinedValue>
+            </res1:UserDefinedValues>
+            <!--Optional:-->
+            <res1:Invoice>
+               <!--Optional:-->
+               <res1:Address addressType="?" otherAddressType="?" languageCode="?" operaId="?" externalId="?" primary="?" displaySequence="?" insertUser="?" insertDate="?" updateUser="?" updateDate="?" inactiveDate="?">
+                  <!--0 to 5 repetitions:-->
+                  <com:AddressLine>?</com:AddressLine>
+                  <!--Optional:-->
+                  <com:cityName>?</com:cityName>
+                  <!--Optional:-->
+                  <com:stateProv>?</com:stateProv>
+                  <!--Optional:-->
+                  <com:countryCode>?</com:countryCode>
+                  <!--Optional:-->
+                  <com:postalCode>?</com:postalCode>
+               </res1:Address>
+               <res1:Name nameOrdered="?" familiarName="?" languageCode="?">
+                  <!--Zero or more repetitions:-->
+                  <com:nameTitle>?</com:nameTitle>
+                  <!--Optional:-->
+                  <com:firstName>?</com:firstName>
+                  <!--Zero or more repetitions:-->
+                  <com:middleName>?</com:middleName>
+                  <com:lastName>?</com:lastName>
+                  <!--Zero or more repetitions:-->
+                  <com:nameSuffix>?</com:nameSuffix>
+               </res1:Name>
+               <res1:ProfileIDs>
+                  <!--Zero or more repetitions:-->
+                  <com:UniqueID type="?" source="?">?</com:UniqueID>
+               </res1:ProfileIDs>
+               <!--Optional:-->
+               <res1:BillNumber type="?" source="?">?</res1:BillNumber>
+               <!--Zero or more repetitions:-->
+               <res1:BillItems Date="?" Time="?" Description="?">
+                  <res1:Account type="?" source="?">?</res1:Account>
+                  <res1:Amount currencyCode="?" decimals="?" currencyText="?">?</res1:Amount>
+                  <!--Optional:-->
+                  <res1:VatCode type="?" source="?">?</res1:VatCode>
+               </res1:BillItems>
+               <!--Zero or more repetitions:-->
+               <res1:BillTaxes Description="?">
+                  <!--Optional:-->
+                  <res1:VatAmount currencyCode="?" decimals="?" currencyText="?">?</res1:VatAmount>
+                  <!--Optional:-->
+                  <res1:VatAmountEuro currencyCode="?" decimals="?" currencyText="?">?</res1:VatAmountEuro>
+               </res1:BillTaxes>
+               <!--Zero or more repetitions:-->
+               <res1:CreditCardSurcharges CreditCardType="?" SurchargePercentage="?">
+                  <!--Optional:-->
+                  <res1:SurchargeThreshold currencyCode="?" decimals="?" currencyText="?">?</res1:SurchargeThreshold>
+                  <res1:SurchargeAmount currencyCode="?" decimals="?" currencyText="?">?</res1:SurchargeAmount>
+                  <!--Optional:-->
+                  <res1:TaxAmount currencyCode="?" decimals="?" currencyText="?">?</res1:TaxAmount>
+                  <res1:TotalBillAmount currencyCode="?" decimals="?" currencyText="?">?</res1:TotalBillAmount>
+               </res1:CreditCardSurcharges>
+            </res1:Invoice>
+            <!--Optional:-->
+            <res1:Preferences>
+               <!--Zero or more repetitions:-->
+               <name:Preference resortCode="?" preferenceType="?" otherPreferenceType="?" preferenceValue="?" insertUser="?" insertDate="?" updateUser="?" updateDate="?" inactiveDate="?">
+                  <!--Optional:-->
+                  <name:PreferenceDescription>
+                     <!--You have a CHOICE of the next 3 items at this level-->
+                     
+                     <com:Image>?</com:Image>
+                     
+                  </name:PreferenceDescription>
+               </name:Preference>
+            </res1:Preferences>
+            <!--Zero or more repetitions:-->
+            <res1:Alerts>
+               <!--Optional:-->
+               <res1:AlertId type="?" source="?">?</res1:AlertId>
+               <res1:Code>?</res1:Code>
+               <res1:Area>?</res1:Area>
+               <!--Optional:-->
+               <res1:Description>?</res1:Description>
+               <!--Optional:-->
+               <res1:PrinterNotification>?</res1:PrinterNotification>
+               <!--Optional:-->
+               <res1:ScreenNotification>?</res1:ScreenNotification>
+            </res1:Alerts>
+            <!--Zero or more repetitions:-->
+            <res1:PayRoutings RoutingInstruction="?" Owner="?" Window="?" Room="?"/>
+            <!--Zero or more repetitions:-->
+            <res1:PayMethods Owner="?" Window="?">
+               <!--Optional:-->
+               <hot:PaymentMethod type="?" value="?" source="?"/>
+            </res1:PayMethods>
+            <!--Optional:-->
+            <res1:AccompanyGuests>
+               <!--1 or more repetitions:-->
+               <hot:AccompanyGuest>
+                  <hot:NameID type="?" source="?">?</hot:NameID>
+                  <hot:FirstName>?</hot:FirstName>
+                  <hot:LastName>?</hot:LastName>
+               </hot:AccompanyGuest>
+            </res1:AccompanyGuests>
+            <!--Optional:-->
+            <res1:ECertificate>
+               <!--Optional:-->
+               <mem:CertificateID type="?" source="?">?</mem:CertificateID>
+               <!--Optional:-->
+               <mem:VoucherNumber>?</mem:VoucherNumber>
+               <!--Optional:-->
+               <mem:CertificateNumber>?</mem:CertificateNumber>
+               <mem:CertificateCode>?</mem:CertificateCode>
+               <!--Optional:-->
+               <mem:HotelReference chainCode="?" hotelCode="?">?</mem:HotelReference>
+               <!--Optional:-->
+               <mem:MembershipType>?</mem:MembershipType>
+               <!--Optional:-->
+               <mem:AwardType>?</mem:AwardType>
+               <!--Optional:-->
+               <mem:PromotionCode>?</mem:PromotionCode>
+               <!--Optional:-->
+               <mem:ShortDescription>?</mem:ShortDescription>
+               <!--Optional:-->
+               <mem:LongDescription>?</mem:LongDescription>
+               <!--Optional:-->
+               <mem:ExpirationDate>?</mem:ExpirationDate>
+               <!--Optional:-->
+               <mem:ReservationCertificateYN>?</mem:ReservationCertificateYN>
+               <!--Optional:-->
+               <mem:CertificateValue currencyCode="?" decimals="?" currencyText="?">?</mem:CertificateValue>
+               <!--Optional:-->
+               <mem:CertificateCost currencyCode="?" decimals="?" currencyText="?">?</mem:CertificateCost>
+               <!--Optional:-->
+               <mem:CertificateLabel>?</mem:CertificateLabel>
+               <!--Optional:-->
+               <mem:NameID type="?" source="?">?</mem:NameID>
+               <!--Optional:-->
+               <mem:ConsumedAt>?</mem:ConsumedAt>
+               <!--Optional:-->
+               <mem:ConsumerLastName>?</mem:ConsumerLastName>
+               <!--Optional:-->
+               <mem:ConsumerFirstName>?</mem:ConsumerFirstName>
+               <!--Optional:-->
+               <mem:ConsumerMiddleName>?</mem:ConsumerMiddleName>
+               <!--Optional:-->
+               <mem:ConsumerEmail>?</mem:ConsumerEmail>
+               <!--Optional:-->
+               <mem:ConsumptionDate>?</mem:ConsumptionDate>
+               <!--Optional:-->
+               <mem:ConsumedHotelReference chainCode="?" hotelCode="?">?</mem:ConsumedHotelReference>
+               <!--Optional:-->
+               <mem:ConsumptionRefNo type="?" source="?">?</mem:ConsumptionRefNo>
+               <!--Optional:-->
+               <mem:ConsumptionRefType>?</mem:ConsumptionRefType>
+               <!--Optional:-->
+               <mem:ConsumptionLegNo type="?" source="?">?</mem:ConsumptionLegNo>
+               <!--Optional:-->
+               <mem:UserNotes>?</mem:UserNotes>
+               <!--Optional:-->
+               <mem:Status>?</mem:Status>
+               <!--Optional:-->
+               <mem:PrintStatus>?</mem:PrintStatus>
+               <!--Optional:-->
+               <mem:MembershipAwardID type="?" source="?">?</mem:MembershipAwardID>
+               <!--Optional:-->
+               <mem:IssueType>?</mem:IssueType>
+               <!--Optional:-->
+               <mem:IssueSource>?</mem:IssueSource>
+               <!--Optional:-->
+               <mem:AwardPoints>?</mem:AwardPoints>
+               <!--Optional:-->
+               <mem:InActiveDate>?</mem:InActiveDate>
+               <!--Optional:-->
+               <mem:CertificateBeginDate>?</mem:CertificateBeginDate>
+               <!--Optional:-->
+               <mem:CertificateEndDate>?</mem:CertificateEndDate>
+               <!--Optional:-->
+               <mem:CertificateExpriyMonths>?</mem:CertificateExpriyMonths>
+               <!--Optional:-->
+               <mem:WebConsumed>?</mem:WebConsumed>
+               <!--Optional:-->
+               <mem:WebAllowed>?</mem:WebAllowed>
+               <!--Optional:-->
+               <mem:PMSConsumed>?</mem:PMSConsumed>
+               <!--Optional:-->
+               <mem:Awards>
+                  <!--Optional:-->
+                  <mem:AwardCode>?</mem:AwardCode>
+                  <!--Optional:-->
+                  <mem:PointsRequired>?</mem:PointsRequired>
+                  <!--Optional:-->
+                  <mem:RuleSchedule>
+                     <mem:Code>?</mem:Code>
+                     <mem:Description>
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        
+                        <com:Image>?</com:Image>
+                        
+                     </mem:Description>
+                     <!--Zero or more repetitions:-->
+                     <mem:PointsSchedule>
+                        <mem:BeginDate>?</mem:BeginDate>
+                        <mem:EndDate>?</mem:EndDate>
+                        <mem:PointsRequired>?</mem:PointsRequired>
+                     </mem:PointsSchedule>
+                  </mem:RuleSchedule>
+               </mem:Awards>
+               <!--Zero or more repetitions:-->
+               <mem:Promotions>
+                  <mem:PromotionCode>?</mem:PromotionCode>
+                  <!--Optional:-->
+                  <mem:PromotionName>?</mem:PromotionName>
+                  <!--Optional:-->
+                  <mem:Resort>?</mem:Resort>
+                  <mem:BookingDate>
+                     <hot:StartDate>?</hot:StartDate>
+                     <!--You have a CHOICE of the next 2 items at this level-->
+                     <hot:EndDate>?</hot:EndDate>
+                     <hot:Duration>?</hot:Duration>
+                  </mem:BookingDate>
+                  <mem:StayDate>
+                     <hot:StartDate>?</hot:StartDate>
+                     <!--You have a CHOICE of the next 2 items at this level-->
+                     <hot:EndDate>?</hot:EndDate>
+                     <hot:Duration>?</hot:Duration>
+                  </mem:StayDate>
+                  <!--Zero or more repetitions:-->
+                  <mem:RateCode>?</mem:RateCode>
+               </mem:Promotions>
+               <!--Optional:-->
+               <mem:Scope>?</mem:Scope>
+            </res1:ECertificate>
+         </res:HotelReservation>
+         <!--Optional:-->
+         <res:KeyTrack Key1Track="?" Key2Track="?" Key3Track="?" Key4Track="?"/>
+         <!--Optional:-->
+         <res:ExternalSystemNumber>
+            <res1:ReferenceNumber>?</res1:ReferenceNumber>
+            <!--Optional:-->
+            <res1:LegNumber>?</res1:LegNumber>
+            <!--Optional:-->
+            <res1:ReferenceType>?</res1:ReferenceType>
+         </res:ExternalSystemNumber>
+      </res:ModifyBookingRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

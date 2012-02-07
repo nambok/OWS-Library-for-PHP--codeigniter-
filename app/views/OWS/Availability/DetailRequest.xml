@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<soap:Header>
+		<OGHeader transactionID="{transactionID}" primaryLangID="E" timeStamp="{timeStamp}" xmlns="http://webservices.micros.com/og/4.3/Core/">
+        	<Origin entityID="{hotelCode}" systemType="WEB"/>
+         	<Destination entityID="{hotelCode}" systemType="PMS"/>
+      	</OGHeader>
+	</soap:Header>
+	<soap:Body>
+		<AvailabilityRequest xmlns:a="http://webservices.micros.com/og/4.3/Availability/" xmlns:hc="http://webservices.micros.com/og/4.3/HotelCommon/" summaryOnly="false" xmlns="http://webservices.micros.com/ows/5.1/Availability.wsdl">
+			<a:AvailRequestSegment availReqType="{availReqType}" roomOccupancy="{roomOccupancy}" numberOfRooms="{numberOfRooms}" totalNumberOfGuests="{totalNumberOfGuests}" numberOfChildren="{numberOfChildren}">
+				<a:StayDateRange>
+					<hc:StartDate>{StartDate}</hc:StartDate>
+					<hc:EndDate>{EndDate}</hc:EndDate>
+				</a:StayDateRange>
+				<a:RatePlanCandidates>
+					<a:RatePlanCandidate ratePlanCode="TRIPPLE"/>
+				</a:RatePlanCandidates>
+				<a:RoomStayCandidates>
+					<a:RoomStayCandidate roomTypeCode="STD"/>
+				</a:RoomStayCandidates>
+				<a:HotelSearchCriteria>
+					<a:Criterion>
+						<a:HotelRef chainCode="CHA" hotelCode="LSDH"/>
+					</a:Criterion>
+				</a:HotelSearchCriteria>
+			</a:AvailRequestSegment>
+		</AvailabilityRequest>
+	</soap:Body>
+</soap:Envelope>

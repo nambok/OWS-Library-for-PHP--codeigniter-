@@ -1,0 +1,13 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://webservices.micros.com/og/4.3/Core/" xmlns:name="http://webservices.micros.com/ows/5.1/Name.wsdl">
+   <soapenv:Header>
+      <core:OGHeader transactionID="{transactionID}" primaryLangID="E" timeStamp="{timeStamp}" xmlns="http://webservices.micros.com/og/4.3/Core/">
+         <core:Origin entityID="{hotelCode}" systemType="WEB"/>
+         <core:Destination entityID="{hotelCode}" systemType="PMS"/>
+      </core:OGHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <name:DeleteEmailRequest>
+         <name:EmailID type="INTERNAL">{operaId}</name:EmailID>
+      </name:DeleteEmailRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

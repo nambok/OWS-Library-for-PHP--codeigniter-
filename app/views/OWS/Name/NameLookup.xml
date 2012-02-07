@@ -1,0 +1,20 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<soap:Header>
+		<OGHeader transactionID="{transactionID}" primaryLangID="E" timeStamp="{timeStamp}" xmlns="http://webservices.micros.com/og/4.3/Core/">
+         	<Origin entityID="{hotelCode}" systemType="WEB"/>
+         	<Destination entityID="{hotelCode}" systemType="PMS"/>
+		</OGHeader>
+	</soap:Header>
+	<soap:Body>
+		<NameLookupRequest xmlns="http://webservices.micros.com/ows/5.1/Name.wsdl">
+			<NameLookupCriteria>
+				<CreditCard xmlns="http://webservices.micros.com/og/4.3/Name/">
+					<LastName>{LastName}</LastName>
+					<FirstName>{FirstName}</FirstName>
+					<CardCode>{MembershipType}</CardCode>
+					<CardNumber>{MembershipNumber}</CardNumber>
+				</CreditCard>
+			</NameLookupCriteria>
+		</NameLookupRequest>
+	</soap:Body>
+</soap:Envelope>

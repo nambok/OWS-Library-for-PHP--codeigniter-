@@ -1,0 +1,18 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://webservices.micros.com/og/4.3/Core/" xmlns:name="http://webservices.micros.com/ows/5.1/Name.wsdl" xmlns:com="http://webservices.micros.com/og/4.3/Common/">
+   <soapenv:Header>
+      <core:OGHeader transactionID="{transactionID}" primaryLangID="E" timeStamp="{timeStamp}" xmlns="http://webservices.micros.com/og/4.3/Core/">
+         <core:Origin entityID="{hotelCode}" systemType="WEB"/>
+         <core:Destination entityID="{hotelCode}" systemType="PMS"/>
+      </core:OGHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <name:UpdateCreditCardRequest>
+         <name:NameCreditCard cardType="{cardType}" operaId="{operaId}">
+            <com:cardCode>{cardCode}</com:cardCode>
+            <com:cardHolderName>{cardHolderName}</com:cardHolderName>
+            <com:cardNumber>{cardNumber}</com:cardNumber>
+            <com:expirationDate>{expirationDate}</com:expirationDate>
+         </name:NameCreditCard>
+      </name:UpdateCreditCardRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

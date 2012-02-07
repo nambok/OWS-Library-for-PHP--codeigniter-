@@ -1,0 +1,25 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://webservices.micros.com/og/4.3/Core/" xmlns:ava="http://webservices.micros.com/ows/5.1/Availability.wsdl" xmlns:ava1="http://webservices.micros.com/og/4.3/Availability/" xmlns:hot="http://webservices.micros.com/og/4.3/HotelCommon/">
+   <soapenv:Header>
+      <core:OGHeader transactionID="{transactionID}" primaryLangID="E" timeStamp="{timeStamp}" xmlns="http://webservices.micros.com/og/4.3/Core/">
+         <core:Origin entityID="{hotelCode}" systemType="WEB"/>
+         <core:Destination entityID="{hotelCode}" systemType="PMS"/>
+      </core:OGHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ava:FetchCalendarRequest>
+         <ava:HotelReference chainCode="{chainCode}" hotelCode="{hotelCode}"></ava:HotelReference>
+         <ava:StayDateRange>
+            <hot:StartDate>{StartDate}</hot:StartDate>
+            <hot:EndDate>{EndDate}</hot:EndDate>
+         </ava:StayDateRange>
+         <ava:GuestCount>
+            <hot:GuestCount ageQualifyingCode="ADULT" count="{totalNumberOfGuests}"/>
+            <hot:GuestCount ageQualifyingCode="CHILD" count="{numberOfChildren}"/>
+         </ava:GuestCount>
+         <ava:RatePlanCode>{ratePlanCode}</ava:RatePlanCode>
+         <ava:RoomTypeCode>{roomTypeCode}</ava:RoomTypeCode>
+         <ava:BlockCode>{invBlockCode}</ava:BlockCode>
+         <ava:PromotionCode>{promotionCode}</ava:PromotionCode>
+      </ava:FetchCalendarRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

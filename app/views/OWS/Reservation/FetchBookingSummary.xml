@@ -1,0 +1,126 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://webservices.micros.com/og/4.3/Core/" xmlns:res="http://webservices.micros.com/ows/5.1/Reservation.wsdl" xmlns:hot="http://webservices.micros.com/og/4.3/HotelCommon/" xmlns:res1="http://webservices.micros.com/og/4.3/Reservation/" xmlns:com="http://webservices.micros.com/og/4.3/Common/">
+   <soapenv:Header>
+      <core:OGHeader transactionID="?" authToken="?" timeStamp="?" primaryLangID="E">
+         <core:Origin entityID="?" organizationID="?" systemType="?"/>
+         <core:Destination entityID="?" organizationID="?" systemType="?"/>
+         <!--Optional:-->
+         <core:Intermediaries>
+            <!--1 or more repetitions:-->
+            <core:EndPoint entityID="?" organizationID="?" systemType="?"/>
+         </core:Intermediaries>
+         <!--Optional:-->
+         <core:Authentication>
+            <core:UserCredentials>
+               <core:UserName>?</core:UserName>
+               <core:UserPassword>?</core:UserPassword>
+               <core:Domain>?</core:Domain>
+               <!--Optional:-->
+               <core:SecurityId>?</core:SecurityId>
+            </core:UserCredentials>
+            <!--Optional:-->
+            <core:Licence>
+               <!--Optional:-->
+               <core:Key>?</core:Key>
+            </core:Licence>
+         </core:Authentication>
+      </core:OGHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <res:FutureBookingSummaryRequest>
+         <!--Optional:-->
+         <res:QueryDateRange dateType="?">
+            <hot:StartDate>?</hot:StartDate>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <hot:EndDate>?</hot:EndDate>
+            <hot:Duration>?</hot:Duration>
+         </res:QueryDateRange>
+         <!--Optional:-->
+         <res:LastName>?</res:LastName>
+         <!--Optional:-->
+         <res:FirstName>?</res:FirstName>
+         <!--Optional:-->
+         <res:CreditCardNumber>?</res:CreditCardNumber>
+         <res:AdditionalFilters GetList="?" RoomNumber="?" ReservationStatus="?" ReservationDisposition="?">
+            <!--Optional:-->
+            <res1:CreationDate>
+               <hot:StartDate>?</hot:StartDate>
+               <!--You have a CHOICE of the next 2 items at this level-->
+               <hot:EndDate>?</hot:EndDate>
+               <hot:Duration>?</hot:Duration>
+            </res1:CreationDate>
+            <!--Optional:-->
+            <res1:ContractId type="?" source="?">?</res1:ContractId>
+            <!--Optional:-->
+            <res1:Membership>
+               <!--Optional:-->
+               <com:membershipType>?</com:membershipType>
+               <com:membershipNumber>?</com:membershipNumber>
+               <!--Optional:-->
+               <com:membershipLevel>?</com:membershipLevel>
+               <!--Optional:-->
+               <com:membershipNextLevel>?</com:membershipNextLevel>
+               <!--Optional:-->
+               <com:memberName>?</com:memberName>
+               <!--Optional:-->
+               <com:effectiveDate>?</com:effectiveDate>
+               <!--Optional:-->
+               <com:expirationDate>?</com:expirationDate>
+               <!--Optional:-->
+               <com:currentPoints>?</com:currentPoints>
+               <!--Optional:-->
+               <com:enrollmentCode>?</com:enrollmentCode>
+               <!--Optional:-->
+               <com:ResvNameId>
+                  <!--Zero or more repetitions:-->
+                  <com:UniqueID type="?" source="?">?</com:UniqueID>
+               </com:ResvNameId>
+               <!--Optional:-->
+               <com:membershipid type="?" source="?">?</com:membershipid>
+               <!--Optional:-->
+               <com:transferPoints>?</com:transferPoints>
+               <!--Optional:-->
+               <com:enrollmentSource>?</com:enrollmentSource>
+               <!--Optional:-->
+               <com:enrolledAt>?</com:enrolledAt>
+               <!--Optional:-->
+               <com:awardPointsToExpires>
+                  <!--Zero or more repetitions:-->
+                  <com:AwardPointsToExpire expirationDate="?" totalToExpire="?" expireByDate="?"/>
+               </com:awardPointsToExpires>
+            </res1:Membership>
+            <!--Optional:-->
+            <res1:HotelReference chainCode="?" hotelCode="?">?</res1:HotelReference>
+            <!--Optional:-->
+            <res1:ConfirmationNumber type="?" source="?">?</res1:ConfirmationNumber>
+            <!--Optional:-->
+            <res1:ResvNameId type="?" source="?">?</res1:ResvNameId>
+            <!--Optional:-->
+            <res1:KeyTrack Key1Track="?" Key2Track="?" Key3Track="?" Key4Track="?"/>
+            <!--Optional:-->
+            <res1:ExternalSystemNumber>
+               <res1:ReferenceNumber>?</res1:ReferenceNumber>
+               <!--Optional:-->
+               <res1:LegNumber>?</res1:LegNumber>
+               <!--Optional:-->
+               <res1:ReferenceType>?</res1:ReferenceType>
+            </res1:ExternalSystemNumber>
+         </res:AdditionalFilters>
+         <res:EncryptedCreditCardSwipe>
+            <com:TrackIndicator>?</com:TrackIndicator>
+            <com:SwiperType>?</com:SwiperType>
+            <!--Optional:-->
+            <com:SwiperID>?</com:SwiperID>
+            <com:MaskedPAN>?</com:MaskedPAN>
+            <!--Optional:-->
+            <com:Track1>?</com:Track1>
+            <!--Optional:-->
+            <com:Track2>?</com:Track2>
+            <com:KeySerialNumber>?</com:KeySerialNumber>
+         </res:EncryptedCreditCardSwipe>
+         <!--You have a CHOICE of the next 3 items at this level-->
+         <res:NameID type="?" source="?">?</res:NameID>
+         <res:CorporateID type="?" source="?">?</res:CorporateID>
+         <res:TravelAgentID type="?" source="?">?</res:TravelAgentID>
+      </res:FutureBookingSummaryRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

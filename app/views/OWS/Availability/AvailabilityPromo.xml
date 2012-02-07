@@ -1,0 +1,32 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://webservices.micros.com/og/4.3/Core/" xmlns:ava="http://webservices.micros.com/ows/5.1/Availability.wsdl" xmlns:ava1="http://webservices.micros.com/og/4.3/Availability/" xmlns:hot="http://webservices.micros.com/og/4.3/HotelCommon/">
+   <soapenv:Header>
+      <core:OGHeader transactionID="{transactionID}" primaryLangID="E" timeStamp="{timeStamp}" xmlns="http://webservices.micros.com/og/4.3/Core/">
+         <core:Origin entityID="{hotelCode}" systemType="WEB"/>
+         <core:Destination entityID="{hotelCode}" systemType="PMS"/>
+      </core:OGHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ava:AvailabilityRequest summaryOnly="{summaryOnly}" xmlns="http://webservices.micros.com/ows/5.1/Availability.wsdl">
+         <ava1:AvailRequestSegment availReqType="{availReqType}" numberOfRooms="{numberOfRooms}" totalNumberOfGuests="{totalNumberOfGuests}" numberOfChildren="{numberOfChildren}">
+            <ava1:StayDateRange>
+               <hot:StartDate>{StartDate}</hot:StartDate>
+               <hot:EndDate>{EndDate}</hot:EndDate>
+            </ava1:StayDateRange>
+            <ava1:RoomStayCandidates>
+               <ava1:RoomStayCandidate roomTypeCode="{roomTypeCode}" />
+            </ava1:RoomStayCandidates>
+			<ava1:RoomStayCandidates>
+				<ava1:RoomStayCandidate invBlockCode="{invBlockCode}"/>
+			</ava1:RoomStayCandidates>
+			<ava1:RatePlanCandidates>
+				<ava1:RatePlanCandidate promotionCode="{promotionCode}"/>
+			</ava1:RatePlanCandidates>
+            <ava1:HotelSearchCriteria>
+               <ava1:Criterion>
+                  <ava1:HotelRef chainCode="{chainCode}" hotelCode="{hotelCode}"></ava1:HotelRef>
+               </ava1:Criterion>
+            </ava1:HotelSearchCriteria>
+         </ava1:AvailRequestSegment>
+      </ava:AvailabilityRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

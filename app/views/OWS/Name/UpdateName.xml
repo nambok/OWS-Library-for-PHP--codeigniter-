@@ -1,0 +1,75 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://webservices.micros.com/og/4.3/Core/" xmlns:name="http://webservices.micros.com/ows/5.1/Name.wsdl" xmlns:com="http://webservices.micros.com/og/4.3/Common/" xmlns:name1="http://webservices.micros.com/og/4.3/Name/">
+   <soapenv:Header>
+      <core:OGHeader transactionID="?" authToken="?" timeStamp="?" primaryLangID="E">
+         <core:Origin entityID="?" organizationID="?" systemType="?"/>
+         <core:Destination entityID="?" organizationID="?" systemType="?"/>
+         <!--Optional:-->
+         <core:Intermediaries>
+            <!--1 or more repetitions:-->
+            <core:EndPoint entityID="?" organizationID="?" systemType="?"/>
+         </core:Intermediaries>
+         <!--Optional:-->
+         <core:Authentication>
+            <core:UserCredentials>
+               <core:UserName>?</core:UserName>
+               <core:UserPassword>?</core:UserPassword>
+               <core:Domain>?</core:Domain>
+               <!--Optional:-->
+               <core:SecurityId>?</core:SecurityId>
+            </core:UserCredentials>
+            <!--Optional:-->
+            <core:Licence>
+               <!--Optional:-->
+               <core:Key>?</core:Key>
+            </core:Licence>
+         </core:Authentication>
+      </core:OGHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <name:UpdateNameRequest>
+         <name:NameID type="?" source="?">?</name:NameID>
+         <name:PersonName nameOrdered="?" familiarName="?">
+            <!--Zero or more repetitions:-->
+            <com:nameTitle>?</com:nameTitle>
+            <!--Optional:-->
+            <com:firstName>?</com:firstName>
+            <!--Zero or more repetitions:-->
+            <com:middleName>?</com:middleName>
+            <com:lastName>?</com:lastName>
+            <!--Zero or more repetitions:-->
+            <com:nameSuffix>?</com:nameSuffix>
+         </name:PersonName>
+         <!--Optional:-->
+         <name:NativeName nameOrdered="?" familiarName="?" languageCode="?">
+            <!--Zero or more repetitions:-->
+            <com:nameTitle>?</com:nameTitle>
+            <!--Optional:-->
+            <com:firstName>?</com:firstName>
+            <!--Zero or more repetitions:-->
+            <com:middleName>?</com:middleName>
+            <com:lastName>?</com:lastName>
+            <!--Zero or more repetitions:-->
+            <com:nameSuffix>?</com:nameSuffix>
+         </name:NativeName>
+         <!--Optional:-->
+         <name:Birthdate>?</name:Birthdate>
+         <!--Optional:-->
+         <name:Gender>?</name:Gender>
+         <!--Optional:-->
+         <name:nationality>?</name:nationality>
+         <!--Optional:-->
+         <name:vipCode>?</name:vipCode>
+         <!--Optional:-->
+         <name:Language>?</name:Language>
+         <!--Optional:-->
+         <name:Id documentType="?" documentNumber="?" effectiveDate="?" expirationDate="?" placeOfIssue="?" countryOfIssue="?"/>
+         <!--Optional:-->
+         <name:KeyWord>
+            <!--Optional:-->
+            <name1:Type>?</name1:Type>
+            <!--Optional:-->
+            <name1:Value>?</name1:Value>
+         </name:KeyWord>
+      </name:UpdateNameRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
